@@ -1,0 +1,261 @@
+body {
+  background-image: url(todospace2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-color: rgb(17, 118, 252);
+  font-family:Lobster;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  color: rgb(23, 158, 199);
+  font-size: 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  text-rendering: auto;
+}
+
+#navigation {
+  border-radius: 15px;
+  height: 40px;
+  width: 43%;
+  border-color: transparent;
+  font-family:Lobster;
+  font-size: 20px;
+
+
+}
+
+#section2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#section {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  flex-direction: column;
+}
+
+#button2 {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  transition: transform 0.2s ease-in-out;
+}
+
+
+#button2:hover {
+  transform: rotate(90deg);
+}
+
+/* Estilos para el pie de página */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  color: #333;
+}
+
+
+/* Estilos para la ventana de creación de tareas */
+form {
+  background: rgba(32, 55, 90, 0.705);
+  background: linear-gradient(0deg, rgba(37, 71, 122, 0.795) 28%, rgba(31, 63, 122, 0.781) 47%, rgba(27, 71, 138, 0.829) 91%);
+
+  padding: 60px 50px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: calc(50% - 100px);
+  right: 50%px;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  pointer-events: none; 
+}
+
+form.visible {
+  opacity: 1;
+  pointer-events: auto; 
+}
+
+
+
+form input[type="text"] {
+  width: 85%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-family:Lobster;
+  font-size: 16px;
+}
+
+form button[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 9px 22px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: Assistant;
+  font-size: 16px;
+
+}
+form button.cancel-button {
+  background-color: red;
+  color: #fff;
+  border: none;
+  padding: 9px 22px;
+  border-radius: 5px;
+  margin-left: 4%;
+  cursor: pointer;
+  font-family: Assistant;
+  font-size: 16px;
+
+}
+
+
+
+
+/* Estilos para las tareas */
+#taskList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#taskList li {
+  background-color: #2653a7;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 1000%;
+  list-style: none;
+}
+
+#taskList li p {
+  margin: 0;
+  font-size: 22px;
+  color: rgb(20, 156, 197)
+
+}
+
+#taskList li button {
+  background-color: #d81d10;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-top: 8px;
+  font-family: Assistant;
+  font-size: 16px;
+
+  
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+}
+
+.task-item input[type="checkbox"] {
+  margin-right: 8px;
+  width: 20px;
+  height: 20px; 
+  
+}
+
+/* Estilos CSS para la animación de eliminación de tarea */
+@keyframes deleteAnimation {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+.delete-animation {
+  animation: deleteAnimation 0.9s ease forwards;
+}
+
+
+/* Estilos para la casilla de verificación personalizada */
+.task-item input[type="checkbox"] {
+  margin-right: 8px;
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  border: 3px solid #19b9e0;
+  border-radius: 50%;
+  outline: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.task-item input[type="checkbox"]:checked {
+  background-color: #26a73c;
+  border-color: #26a742;
+}
+
+.task-item input[type="checkbox"]:checked::before {
+  content: "\2713";
+  display: block;
+  text-align: center;
+  line-height: 16px;
+  color: #fff;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  
+  nav {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    text-rendering: auto;
+  }
+  
+  #navigation {
+    border-radius: 15px;
+    height: 40px;
+    width: 100%;
+    border-color: transparent;
+    font-family:Lobster;
+    font-size: 20px;
+  }
+#taskList li {
+  background-color: #2653a7;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 1000%;
+  list-style: none;
+}
+  
+
+}
